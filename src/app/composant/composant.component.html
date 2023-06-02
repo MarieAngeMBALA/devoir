@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Composants</title>
+ <style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif
+  }
+   .header {
+    width: 100%;
+    background-color: blue;
+    color: white;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+  }
+  
+  .menu .bouton {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .menu .bouton-connexion {
+    background-color: blue;
+    color: white;
+  }
+  
+  
+    
+    .barre-recherche {
+      margin: 0 10px;
+      padding: 5px;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    
+    nav ul li {
+      margin-right: 10px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+    }
+    
+    .bouton-connexion {
+      background-color: #0000FF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    main {
+        background-image: url(./assets/fondcomposant.png);
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .composants-btn {
+        background-color: white;
+        color: blue;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 50px;
+        margin-bottom: 20px;
+     
+      }
+      
+      .title {
+        font-size: 32px;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif
+        
+      }
+      
+      .description {
+        font-size: 15px;
+        margin-bottom: 40px;
+      }
+      
+      .photos {
+        display: flex;
+        justify-content: space-between;
+      }
+      
+      .photo {
+        flex: 1;
+        margin: 0 10px;
+      }
+      
+      .photo img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      
+      .photo p {
+        font-size: 12px;
+      }
+      
+    
+    p {
+      font-size: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .pied-de-page {
+      background-color: white;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+   
+    }
+  
+
+    .pied-de-page {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5px;
+  }
+
+ 
+
+  .pied-de-page img {
+    margin-right: 10px; 
+  }
+  .im1{
+    width: 10%;
+  }
+  .im2{
+    width: 20%;
+  }
+  .im3{
+    width: 15%;
+  }
+  
+
+    .pied-de-page img {
+      margin-right: 10px; 
+    }
+    
+    .cmp{
+      text-align: left;
+      margin: 1px 30px;
+    }
+    
+    .til{
+      font-size: 30px;
+    }
+
+    .texte-centre {
+    text-align: center;
+  }
+ </style>
+</head>
+<body>
+  <header>
+    <div class="menu">
+     
+    </div>
+  </header>
+  <main>
+    <div class="cmp">
+      <button class="composants-btn"  routerLink="/gamer">Tous les <br> composants</button>
+    </div>
+    <h1 class="title">Comprendre les composants d'un PC</h1>
+    <p class="description">Les composants d'un PC sont les éléments matériels qui permettent son fonctionnement. <br>
+        Ils comprennent notamment le processeur, qui exécute les calculs, la mémoire vive (RAM),<br>
+         qui stocke temporairement les données en cours d'utilisation, et le disque dur ou SSD, <br>
+         qui permet de stocker les données de manière permanente.</p>
+    <div class="photos">
+      <div class="photo">
+        <img src="./assets/processeur.png" alt="Photo 1">
+        <p>Le processeur, aussi appelé CPU (Central Processing Unit), <br>
+            est le composant principal d'un ordinateur responsable de l'exécution<br>
+             des instructions et du traitement des données.<br>
+              Il est est responsable de la vitesse et de la performance de l'ensemble du système.</p>
+      </div>
+      <div class="photo">
+        <img src="./assets/cartegraphique.png" alt="Photo 2">
+        <p>La carte graphique traite les images et les vidéos pour les afficher sur l'écran<br>
+            . Elle contient son propre processeur graphique (GPU) dédié,<br>
+             de la mémoire vidéo et des circuits électroniques qui accélèrent <br>
+             le traitement des données graphiques.</p>
+      </div>
+      <div class="photo">
+        <img src="./assets/ram.png" alt="Photo 3">
+        <p>La RAM, ou mémoire vive, est un type de mémoire informatique<br>
+             qui permet à un ordinateur de stocker temporairement les données <br>
+             et les programmes en cours d'utilisation pour un accès rapide par le processeur.</p>
+      </div>
+    </div>
+  </main>
+  
+  
+  <p class="texte-centre">Reconnu par les meilleures entreprises du monde</p>
+  <footer class="pied-de-page">
+   
+    
+    <img src="./assets/logo1.png" alt="Logo 1" class="im1">
+    <img src="./assets/logo2.png" alt="Logo 2" class="im2">
+    <img src="./assets/logo3.png" alt="Logo 3" class="im3">
+    
+  </footer>
+    
+  </body>
+  
+</html>
+
+
+

@@ -1,0 +1,220 @@
+
+    <div class="menu">
+      <a routerLink="/pageacceuil" class="image"><img src="./assets/logo.png" alt="Logo" class="logo">OrdinaTech</a>
+      <input type="text" class="barre-recherche" placeholder="     Barre de recherche">
+      <button class="bouton" routerLink="/pagepromotion">Promotions</button>
+      <button class="bouton" routerLink="/ordinateurbureau">Ordinateurs de bureau</button>
+      <button class="bouton" routerLink="/gamer">Ordinateurs portables</button>
+      <button class="bouton" routerLink="/composant" >Composants</button>
+      <button class="bouton-connexion" routerLink="/inscription">Se connecter</button>
+      <a routerLink="/panier">
+        <img src="./assets/panier.png" alt="Panier" class="logo-panier">
+        <span class="panier-quantite">{{getNombre()}}</span>
+      </a>
+    </div>
+
+<style>
+    body, html {
+    height: 100%;
+    width: 100%;
+  }
+
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    height: 70px;
+  }
+  
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+  }
+
+  .menu .bouton {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+  }
+  
+  .menu .bouton :hover {
+    color: red;
+    background-color: green;
+  }
+
+  .menu .bouton-connexion {
+    background-color: blue;
+    color: white;
+  }
+  .menu .panier-quantite {
+  top: 30px; /* Ajustez ces valeurs selon vos besoins */
+  right: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 100%;
+  padding: 5px;
+  font-size: 12px;
+}
+  .logo{
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo-panier{
+    width: 30px;
+    height:30px;
+  }
+    
+    .barre-recherche {
+        background-image: url("./assets/search.jpg"); /* Chemin vers votre image */
+        background-repeat: no-repeat; /* Empêche la répétition de l'image */
+        background-position: left center; /* Position de l'image dans la barre de recherche */
+        background-size: 20px; /* Taille automatique de l'image */
+        padding-right: 200px; /* Espace pour éviter que le texte ne soit masqué par l'image */
+      padding: 2px;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    
+    nav ul li {
+      margin-right: 10px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+    }
+    
+    .bouton-connexion {
+      background-color: #0000FF;
+      color: white;
+      border: none;
+      border-radius: 100px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .contenu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-image: url(./assets/fondacceuil.png);
+      background-size: cover;
+      color: white;
+      
+    }
+    
+    .contenu .contenu-gauche {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .contenu .contenu-gauche h1 {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+     
+    }
+    
+    .contenu .contenu-gauche p {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .contenu .contenu-droite {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 20px;
+    }
+    
+    .contenu .contenu-droite img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .contenu .contenu-gauche .conseil .bouton-conseil {
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    
+    
+  
+    
+    
+    .contenu-droite .bouton-voir-produits {
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .conseil{
+    
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .pied-de-page {
+      background-color: white;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+    }
+  
+    .pied-de-page img {
+      margin-right: 10px; 
+    }
+    
+    
+    .texte-centre {
+    text-align: center;
+  }
+  .conseil .bouton-conseil {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  </style>
+<router-outlet></router-outlet>

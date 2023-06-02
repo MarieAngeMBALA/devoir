@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inscription</title>
+  <style>
+    
+.header {
+    width: 100%;
+    background-color: blue;
+    color: white;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+  }
+  
+  .menu .bouton {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .menu .bouton-connexion {
+    background-color: blue;
+    color: white;
+  }
+  
+  
+    
+    .barre-recherche {
+      margin: 0 10px;
+      padding: 5px;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    
+    nav ul li {
+      margin-right: 10px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+    }
+    
+    .bouton-connexion {
+      background-color: #0000FF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  
+    .contenu {
+      background-color: lightgray;
+       
+     
+      }
+
+.contenu .bouton-conseil{
+     background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    cursor: pointer;
+    margin: 5px 20px;
+    
+}
+ .bouton{
+  background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px 20px;
+    
+ }     
+
+      
+      .pied-de-page {
+        background-color: white;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+     
+      }
+    
+      .pied-de-page {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5px;
+  }
+
+ 
+
+  .pied-de-page img {
+    margin-right: 10px; 
+  }
+  .im1{
+    width: 10%;
+  }
+  .im2{
+    width: 20%;
+  }
+  .im3{
+    width: 15%;
+  }
+  
+.image1{
+    width: 65%;
+    
+}
+
+.image2{
+  width: 80%;
+  margin-left: 5%;
+}
+
+.tableau{
+  margin-left: 30%;
+ 
+}      
+        
+  </style>
+</head>
+<body>
+  
+  <main class="contenu">
+    <div >
+        <button class="bouton-conseil"  routerLink="/formulaire">Conseils</button>
+    </div>
+
+    <div class="tableau">
+    <table>
+      <tr>
+        <td>
+          <div>
+            <img src="./assets/reduc2.png" alt="Image 1" class="image1">
+          </div>
+        </td>
+
+        <td>
+          <div>
+            <img src="./assets/image5.png" alt="Image 5" class="image5">
+           
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+      <table> 
+        <tr>
+          <td>
+        <div>
+          <img src="./assets/ordi.png" alt="Image 2" class="image2">
+        </div>
+      </td>
+      <td>
+        <div class="texte">
+          <p>Profitez de notre promotion de printemps pour obtenir un PC de haute qualité à un prix imbattable !<br>
+               Que vous soyez à la recherche d'un PC pour votre travail, <br>
+               vos études ou pour vos loisirs, nous avons tout ce qu'il vous faut !</p>
+        </div>
+        <div>
+          <button class="bouton"  routerLink="/gamer">Voir les produits</button>
+        </div>
+      </td>
+      </tr>
+      </table> 
+  </main>
+  
+ 
+  <p class="texte-centre">Reconnu par les meilleures entreprises du monde</p>
+  <footer class="pied-de-page">
+   
+    <img src="./assets/logo1.png" alt="Logo 1" class="im1">
+    <img src="./assets/logo2.png" alt="Logo 2" class="im2">
+    <img src="./assets/logo3.png" alt="Logo 3" class="im3">
+    
+    
+  </footer>
+  </body>
+  </html>
+  
+
+

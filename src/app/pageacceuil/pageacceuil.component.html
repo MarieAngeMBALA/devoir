@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>page-acceuil</title>
+ 
+</head>
+<body>
+  <main class="contenu">
+   
+    <div class="contenu-gauche">
+      <div class="conseil">
+        <p class="txt-conseil">CHOISIS LE PC QUI TE CONVIENT<br>
+          '''''GRACE A NOS CONSEILS
+         </p>
+           
+      </div>
+
+      <div class="conseil">
+        <button class="bouton-conseil" mat-raised-button (click)="openDialog()" >Conseil</button>
+       </div> 
+  
+      <h1>Ordinatech</h1>
+      <h3>Numéro 1 en France</h3>
+      <p class="sous-titre">Découvrez nos produits phares <br> qui défilent en temps réel sur la droite de notre site,<br>présentant notre sélection minutieuse d'ordinateurs pour répondre à tous vos besoins.</p>
+      <div>
+        <button class="bouton-voir-produits"  routerLink="/gamer">Voir les produits</button>
+
+      </div>
+    </div>
+    
+    <div class="contenu-droite">
+      <img src="./assets/ordi.png" alt="Image" class="ordis">
+    </div>
+  </main>
+  
+  <p class="texte-centre">Reconnu par les meilleures entreprises du monde</p>
+  <footer class="pied-de-page">
+   
+    <img src="./assets/logo1.png" alt="Logo 1" class="im1">
+    <img src="./assets/logo2.png" alt="Logo 2" class="im2">
+    <img src="./assets/logo3.png" alt="Logo 3" class="im3">
+    
+  </footer>
+  <style>
+
+  body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+
+ .txt-conseil{
+ font-size: 11px;
+ letter-spacing: 3px;
+ margin: 10px 20px;
+ font-family: Arial, Helvetica, sans-serif
+}
+
+.bouton-conseil{
+  margin: 0px 100px;
+}
+
+.ordis{
+  width: 85%;
+  margin-top: 15%;
+  margin-right: 15%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 2);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  color: black;
+}
+
+.menu .bouton {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.menu .bouton-connexion {
+  background-color: blue;
+  color: white;
+}
+
+
+  
+  .barre-recherche {
+    margin: 0 10px;
+    padding: 5px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .bouton-connexion {
+    background-color: #0000FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .contenu {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    background-image: url(./assets/fondacceuil.png);
+    background-size: cover;
+    color: white;
+    height: 100%;
+  }
+  
+  .contenu .contenu-gauche {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  .contenu .contenu-gauche h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 230px;
+    font-family: Arial, Helvetica, sans-serif
+     }
+
+    .contenu .contenu-gauche h3 {
+    font-size: 30px;
+    margin: 0px 190px;
+    font-family: Arial, Helvetica, sans-serif
+     }
+  
+ .sous-titre {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+  .contenu .contenu-droite {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  
+  .contenu .contenu-droite img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .contenu .contenu-gauche .conseil .bouton-conseil {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    cursor: pointer;
+  }
+  
+  
+
+  
+  
+  .contenu-gauche .bouton-voir-produits {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    cursor: pointer;
+   margin: 15px 250px;
+  
+   
+  }
+  .conseil{
+  
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 30%;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .pied-de-page {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5px;
+  }
+
+ 
+
+  .pied-de-page img {
+    margin-right: 10px; 
+
+  }
+  .im1{
+    width: 10%;
+  }
+  .im2{
+    width: 20%;
+  }
+  .im3{
+    width: 15%;
+  }
+  
+  .texte-centre {
+  text-align: center;
+}
+</style>
+</body>
+
+</html>

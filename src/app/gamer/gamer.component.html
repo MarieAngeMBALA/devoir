@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gamer</title>
+<style>
+  body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+ .header {
+  width: 100%;
+  background-color: blue;
+  color: white;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  color: black;
+}
+
+.menu .bouton {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.menu .bouton-connexion {
+  background-color: blue;
+  color: white;
+}
+
+
+  
+  .barre-recherche {
+    margin: 0 10px;
+    padding: 5px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .bouton-connexion {
+    background-color: #0000FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .contenu {
+  background-image: url(./assets/fondgamer.png);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+  .contenu .grille {
+    display: flex;
+   margin-left: 140px;
+  flex-wrap: wrap;
+
+  
+}
+
+.contenu .grille .tableau {
+    flex-basis: 15%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+
+.contenu .grille .tableau .ajouter{
+    background-color: blue;
+    color: white;
+    border-radius: 20px;
+    
+}
+
+.contenu .grille .tableau .image-col img {
+  width:300px; 
+  height: 200px; 
+ 
+}
+.contenu .grille .tableau .price-col p {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  padding: 0px 10px;
+  margin-right: 100%;
+  margin-top: 0%;
+}
+
+.bouton-conseil{
+  margin: 0px 10px;
+}
+
+.contenu .bouton-conseil{
+     background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+    cursor: pointer;
+    align-self: flex-start;
+    
+}
+
+  .title {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+  }
+  
+  table {
+    flex-basis: 10%;
+    border-collapse: collapse;
+    margin:0;
+    padding:0;
+  }
+  
+  .tableau{
+    width: 30%;
+   
+  }
+
+  td {
+    padding: 0px;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .image-col img {
+    width: 100%;
+    box-shadow: 0px 0px 8px gray;
+  }
+  
+  .text-col {
+    background-color: white;
+  }
+  
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .pied-de-page {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5px;
+  }
+
+ 
+
+  .pied-de-page img {
+    margin-right: 10px; 
+  }
+  .im1{
+    width: 10%;
+  }
+  .im2{
+    width: 20%;
+  }
+  .im3{
+    width: 15%;
+  }
+  
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 230px;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
+     }
+
+  .en-tete{
+    margin-top: 0%;
+  }
+  
+  .texte-centre {
+  text-align: center;
+}
+.selec{
+  text-align: center;
+  margin-left: 90%;
+}
+</style>
+</head>
+<body>
+  
+  <main class="contenu">
+    <select [(ngModel)]="filtre" class="selec"> <!-- Assurez-vous que c'est bien lié à filtre (et non _filtre) -->
+      <option value="">Trier par</option>
+      <option value="croissant">Prix Croissant</option>
+      <option value="decroissant">Prix Décroissant</option>
+  </select>
+  
+  <div class="conseil">
+    <button class="bouton-conseil" mat-raised-button (click)="openDialog()" >Conseil</button>
+   </div>
+    
+    <div class="en-tete">
+      <h1>Nos Ordinateurs Portables</h1>
+    </div>
+    <div class="grille">
+        <p>                              <br>                            </p>
+        <div class="tableau" *ngFor="let info of infos; let i = index" [hidden]="!afficherToutes && i >= 3">
+            <table>
+                <tr>
+                  <td class="image-col">
+                    <img [src]="info.image" alt="{{info.info}}">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-col">
+                    <p [innerHTML]="info.caract"></p>
+                    <button (click)="ajouterAuPanier(info)" class="ajouter">Ajouter au Panier</button>
+                  </td>
+                
+                </tr>
+                <tr>
+                  <td class="price-col">
+                    <p>{{info.prix}}€</p>
+                  </td> 
+                </tr>
+                
+              </table>
+              
+        </div>
+      </div>
+      
+      <button class="voir-plus" (click)="afficherToutes = true" *ngIf="!afficherToutes" style="background-color: blue; color: white;">Voir plus</button>
+      <button class="voir-moins" (click)="afficherToutes = false" *ngIf="afficherToutes" style="background-color: blue; color: white;">Voir moins</button>
+    
+  
+  </main>
+  
+  <p class="texte-centre">Reconnu par les meilleures entreprises du monde</p>
+  <footer class="pied-de-page">
+   
+    <img src="./assets/logo1.png" alt="Logo 1" class="im1">
+    <img src="./assets/logo2.png" alt="Logo 2" class="im2">
+    <img src="./assets/logo3.png" alt="Logo 3" class="im3">
+    
+  </footer>
+    
+  </body>
+  
+</html>
+
+

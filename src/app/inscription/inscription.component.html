@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inscription</title>
+ <style>
+  body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif
+
+}
+  
+  .header {
+    width: 100%;
+    background-color: blue;
+    color: white;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+  }
+  
+  .menu .bouton {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .menu .bouton-connexion {
+    background-color: blue;
+    color: white;
+  }
+  
+  
+    
+    .barre-recherche {
+      margin: 0 10px;
+      padding: 5px;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    
+    nav ul li {
+      margin-right: 10px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+    }
+    
+    .bouton-connexion {
+      background-color: #0000FF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  
+  .contenu {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./assets/fondgamer.png);
+    color: white;
+  }
+  .formulaire h1 {
+    font-size: 32px; 
+  }
+  
+  .formulaire p {
+    font-size: 14px; 
+    color:red;
+    text-align: center;
+  }
+  
+  .formulaire input,
+  .formulaire textarea {
+    width: 100px;
+    border-radius: 5px; 
+    font-size: 17px; 
+  }
+  
+  
+  .formulaire a {
+    color: red;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  .formulaire form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .formulaire label {
+    margin-bottom: 5px;
+  }
+  
+  .formulaire input,
+  .formulaire textarea {
+    width: 300px;
+    padding: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .formulaire .bouton-envoyer {
+    background-color: #0000FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+  }
+  
+  p {
+    font-size: 16px;
+    
+  }
+  
+  .pied-de-page {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+ 
+  }
+
+
+   .pied-de-page {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5px;
+  }
+
+ 
+
+  .pied-de-page img {
+    margin-right: 10px; 
+  }
+  .im1{
+    width: 10%;
+  }
+  .im2{
+    width: 20%;
+  }
+  .im3{
+    width: 15%;
+  }
+  
+  
+  .texte-centre {
+  text-align: center;
+}
+ </style>
+</head>
+<body>
+  
+  <main class="contenu">
+    <div class="formulaire">
+      <h1>Créer un nouveau compte</h1>
+      <p>Vous êtes déjà inscrit ? <a  routerLink="/inscription">Se connecter</a></p>
+      <form>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom">
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email">
+        <label for="motdepasse">Mot de passe :</label>
+        <input type="password" id="motdepasse" name="motdepasse">
+        <label for="naissance">Date de naissance :</label>
+        <input type="date" id="naissance" name="naissance">
+        <label for="message">Message :</label>
+        <textarea id="message" name="message"></textarea>
+        <button class="bouton-envoyer">S'inscrire</button>
+      </form>
+    </div>
+  </main>
+  <p class="texte-centre">Reconnu par les meilleures entreprises du monde</p>
+  <footer class="pied-de-page">
+   
+    <img src="./assets/logo1.png" alt="Logo 1" class="im1">
+    <img src="./assets/logo2.png" alt="Logo 2" class="im2">
+    <img src="./assets/logo3.png" alt="Logo 3" class="im3">
+    
+  </footer>
+</body>
+</html>
+

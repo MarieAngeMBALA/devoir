@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inscription</title>
+  <style>
+    
+  
+  .header {
+    width: 100%;
+    background-color: blue;
+    color: white;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+  }
+  
+  .menu .bouton {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .menu .bouton-connexion {
+    background-color: blue;
+    color: white;
+  }
+  
+  
+    
+    .barre-recherche {
+      margin: 0 10px;
+      padding: 5px;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    
+    nav ul li {
+      margin-right: 10px;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+    }
+    
+    .bouton-connexion {
+      background-color: #0000FF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  
+    .panier {
+        text-align: center;
+        background-image: url(./assets/fondacceuill.png);
+      background-size: cover;
+      color: black;
+      }
+      
+      .panier h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .panier  .grille-panier {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crée une grille avec 3 colonnes de taille égale */
+    gap: 20px; /* Espace entre les éléments de la grille */
+  }
+  .panier .image-item {
+    /* Ajustez ces dimensions pour qu'elles correspondent à ce que vous voulez */
+    height: 100px;
+    width: 100px;
+  }
+      .panier .image-panier {
+    /* Ajustez ces dimensions pour qu'elles correspondent à ce que vous voulez */
+      height: 200px;
+      width: 200px;
+  }
+    .panier .item-panier {
+      display: flex;
+    align-items: center; /* Centrer les éléments verticalement */
+    margin-bottom: 20px; /* Espace entre les éléments du panier */
+    }
+
+    .panier .item-panier img {
+    /* Ajustez ces dimensions pour qu'elles correspondent à ce que vous voulez */
+    height: 100px;
+    width: 100px;
+    margin-right: 20px; /* Espace entre l'image et les détails de l'article */
+  }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      
+      table th, table td {
+        padding: 10px;
+        border: 1px solid #000000;
+      }
+      
+      table th {
+        background-color: #FFFFFF;
+      }
+      
+      table td img {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .total {
+        margin-top: 20px;
+      }
+      
+      .total h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      
+      .total .payer {
+        background-color: #0000FF;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      .supprimer {
+        background-color: #FF0000;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .pied-de-page {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+ 
+  }
+
+  .pied-de-page {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5px;
+  }
+
+ 
+
+  .pied-de-page img {
+    margin-right: 10px; 
+  }
+  .im1{
+    width: 10%;
+  }
+  .im2{
+    width: 20%;
+  }
+  .im3{
+    width: 15%;
+  }
+  
+  
+  
+  .texte-centre {
+  text-align: center;
+}
+  
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu">
+     
+    </div>
+  </header>
+  <main class="panier">
+    <h1>Panier</h1>
+    <img *ngIf="panier.length === 0" src="./assets/paniervide.png" alt="panier" class="image-panier">
+    <h1 *ngIf="panier.length === 0">Votre panier est vide</h1>
+    <div class="grille-panier">
+      <div *ngFor="let item of panier" class="item-panier">
+        <img [src]="item.image" alt="{{item.info}}" class="image-item">
+        <div>
+          <p>{{item.info}}</p>
+          <p>{{item.prix}} €</p>
+          <button class="supprimer" (click)="supprimerDuPanier(item)">Supprimer</button>
+        </div>
+      </div>
+    </div>
+    <div class="total">
+      <h3>Total à payer : {{ getTotal() }} €</h3>
+      <button class="payer">Valider le paiement</button>
+    </div>
+  </main>
+  
+  
+ 
+  <p class="texte-centre">Reconnu par les meilleures entreprises du monde</p>
+  <footer class="pied-de-page">
+   
+    <img src="./assets/logo1.png" alt="Logo 1" class="im1">
+    <img src="./assets/logo2.png" alt="Logo 2" class="im2">
+    <img src="./assets/logo3.png" alt="Logo 3" class="im3">
+    
+    
+  </footer>
+  </body>
+  </html>
+  
+
